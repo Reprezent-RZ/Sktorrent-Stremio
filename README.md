@@ -70,3 +70,41 @@ MIT License (voľné použitie, bez záruky)
 
 Tento doplnok je experimentálny projekt na osobné účely.
 Ak máš návrhy na vylepšenie alebo chceš prispieť – neváhaj a pošli pull request.
+
+# Inštrukcie pre online testovanie
+
+Ukážky z lokálneho testovania doplnku:
+<img title="A sample of usage stremio adddon with movie search in Stremio" alt="A sample of usage stremio adddon with movie search in Stremio" src="sample1.png">
+<img title="A sample of usage stremio adddon with series search in Stremio" alt="A sample of usage stremio adddon with movie search in Stremio" src="sample2.png">
+
+
+🛠️ Krok za krokom: Deploy na Render (online testovanie)
+
+    - Vytvor nový GitHub repozitár s týmito súbormi.
+    - vytvore fork projektu na svojom GitHub učte  
+    - Prejdi na: https://render.com/ a zaregistruj sa / prihlás.
+    - Klikni na "New +" → "Web Service".
+    - Vyber možnosť "Deploy from a Git repository" a prepoj svoj GitHub účet.
+    - Vyber svoj repozitár (napr. stremio-sktorrent-addon).
+    - Vyplň nastavenia:
+        Name: napr. sktorrent-addon
+        Environment: Node
+        Build Command:	npm install
+
+        Start Command: node online-sktorrent-addon.js
+        Region: podľa tvojho výberu
+        Instance Type: Free (ak ti postačuje)
+
+    - V sekcii Environment Variables zadaj:
+      SKT_UID = tvoje_UID
+      SKT_PASS = tvoje_PASS
+
+    - Klikni "Create Web Service".
+
+🌐 Po deploy
+
+Po deployi ti Render vygeneruje URL napr.:
+
+https://sktorrent-addon.onrender.com/manifest.json
+
+Túto adresu môžeš použiť v Stremio na inštaláciu doplnku.
