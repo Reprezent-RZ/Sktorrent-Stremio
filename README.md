@@ -84,12 +84,12 @@ Ukážky z lokálneho testovania doplnku:
     - Prejdi na: https://render.com/ a zaregistruj sa / prihlás.
     - Klikni na "New +" → "Web Service".
     - Vyber možnosť "Deploy from a Git repository" a prepoj svoj GitHub účet.
-    - Vyber svoj repozitár (napr. stremio-sktorrent-addon).
+    - Vyber svoj repozitár (napr. Sktorrent-Stremio-addon).
     - Vyplň nastavenia:
         Name: napr. sktorrent-addon
         Environment: Node
         Build Command:	npm install
-        Start Command: node online-sktorrent-addon.js
+        Start Command:  node sktorrent-addon.js
         Region: podľa tvojho výberu
         Instance Type: Free (ak ti postačuje)
     - V sekcii Environment Variables zadaj:
