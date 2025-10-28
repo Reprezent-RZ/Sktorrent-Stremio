@@ -506,4 +506,28 @@ builder.defineStreamHandler(async ({ type, id }) => {
     const streams = allStreams.filter(Boolean).reduce((acc, s) => {
         const key = `${s.infoHash}:${s.fileIdx}`;
         if (!acc.keys.has(key)) {
-   
+            acc.keys.add(key);
+            acc.items.push(s);
+        }
+        return acc;
+    }, { keys: new Set(), items: [] }).items;
+
+    // Sort by seeds (descending)
+    streams.sort((a, b) => {
+        const sa = parseInt(a.title.match(/👤\s*(\d+)/)?.[1] || 0);
+        const sb = parseInt(b.title.match(/👤\s*(\d+)/)?.[1] || 0);
+        return sb - sa;
+    });
+
+    console.log(`[INFO] ✅ Odosielam ${streams.length} streamov pre seriál`);
+    return { streams };
+});
+
+builder.defineCatalogHandler(({ type, id }) => {
+    console.log(`[DEBUG] 📚 Katalóg požiadavka pre typ='${type}' id='${id}'`);
+    return { metas: [] }; // aktivuje prepojenie
+});
+
+console.log("📎 Manifest debug výpis:", builder.getInterface().manifest);
+serveHTTP(builder.getInterface(), { port: 7000 });
+console.log("🚀 SKTorrent addon beží na http://localhost:7000/manifest.json");
