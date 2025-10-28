@@ -531,3 +531,4 @@ builder.defineCatalogHandler(({ type, id }) => {
 console.log("📎 Manifest debug výpis:", builder.getInterface().manifest);
 serveHTTP(builder.getInterface(), { port: 7000 });
 console.log("🚀 SKTorrent addon beží na http://localhost:7000/manifest.json");
+
