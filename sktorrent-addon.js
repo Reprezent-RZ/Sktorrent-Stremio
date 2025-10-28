@@ -8,14 +8,12 @@ const bencode = require("bncode");
 const crypto = require("crypto");
 
 // Prihlasovacie údaje na SKTorrent
-const SKT_UID = "";
-const SKT_PASS = "";
+const SKT_UID = process.env.SKT_UID;
+const SKT_PASS = process.env.SKT_PASS;
+const TMDB_API_KEY = process.env.TMDB_API_KEY;
 
 const BASE_URL = "https://sktorrent.eu";
 const SEARCH_URL = `${BASE_URL}/torrent/torrents_v2.php`;
-
-// TMDB API kľúč
-const TMDB_API_KEY = "";
 
 // Inicializácia addon buildera
 const builder = addonBuilder({
@@ -377,3 +375,4 @@ builder.defineCatalogHandler(() => ({ metas: [] }));
 
 serveHTTP(builder.getInterface(), { port: 7000 });
 console.log("🚀 SKTorrent addon beží na http://localhost:7000/manifest.json");
+
