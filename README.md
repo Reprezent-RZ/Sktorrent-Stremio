@@ -4,11 +4,12 @@ Tento neoficiálny doplnok pre [Stremio](https://www.stremio.com/) umožňuje vy
 
 ## 🔧 Funkcie
 
-- Vyhľadávanie filmov aj seriálov podľa názvu z IMDb (vrátane fallback variant).
+- Vyhľadávanie filmov aj seriálov podľa názvu z IMDb +Tmdb api (vrátane fallback variant).
 - Podpora sezón a epizód v rôznych formátoch (`S01E01`, `1. serie`, `Season 3`, atď.).
 - Detekcia a selekcia relevantných multimediálnych súborov z multi-epizódnych torrent balíkov.
 - Filtrovanie podľa veľkosti, typu súboru (.mkv, .mp4, .avi, atď.).
-- Automatická extrakcia `infoHash` zo `.torrent` súborov (funkcia je vo vývoji pre multi-session torrenty).
+- Automatická extrakcia `infoHash` zo `.torrent` súborov.
+- Detekcia presnej epizódy na základe názvu súboru a infoHash
 - Piktogramy jazykových vlajok a CSFD rating v názve streamu.
 
 ## 🧪 Lokálna inštalácia a testovanie
